@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ahmad Khapidin - Jasa Pembuatan Website Profesional dengan Desain Sederhana, Modern, estetik & Responsif.">
+  <title>Ahmad Khapidin | Jasa Pembuatan Website Profesional</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* Mengadopsi Variabel Warna Tema Premium dari Kode Referensi */
+    :root {
+      --bg: #030712;
+      --bg-2: #0f1025;
+      --card: rgba(255, 255, 255, 0.075);
+      --card-strong: rgba(255, 255, 255, 0.12);
+      --border: rgba(255, 255, 255, 0.16);
+      --text: #f8fafc;
+      --muted: #a5b4fc;
+      --soft: #cbd5e1;
+      --purple: #a855f7;
+      --violet: #7c3aed;
+      --blue: #38bdf8;
+      --cyan: #22d3ee;
+      --pink: #ec4899;
+      --green: #34d399;
+      --shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+      --radius: 28px;
+      --container: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 110px;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      /* Efek Cahaya Radial Glow di Latar Belakang */
+      background:
+        radial-gradient(circle at 12% 12%, rgba(168, 85, 247, 0.28), transparent 30%),
+        radial-gradient(circle at 90% 8%, rgba(56, 189, 248, 0.18), transparent 32%),
+        radial-gradient(circle at 50% 100%, rgba(236, 72, 153, 0.12), transparent 35%),
+        linear-gradient(135deg, #020617 0%, #09081f 45%, #020617 100%);
+      overflow-x: hidden;
+    }
+
+    /* Pola Garis Grid Transparan */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.22;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: radial-gradient(circle at center, black, transparent 78%);
+      z-index: -2;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--container));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    /* Efek Kaca (Glassmorphism) */
+    .glass {
+      background: linear-gradient(145deg, rgba(255,255,255,0.105), rgba(255,255,255,0.04));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    /* Efek Teks Gradasi Menyala */
+    .gradient-text {
+      color: transparent;
+      background: linear-gradient(90deg, #ffffff 0%, #c084fc 35%, #67e8f9 70%, #ffffff 100%);
+      background-size: 220% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: textGlow 7s ease-in-out infinite alternate;
+    }
+
+    @keyframes textGlow {
+      from { background-position: 0% center; }
+      to { background-position: 100% center; }
+    }
+
+    /* Header Melayang Premium */
+    .site-header {
+      position: fixed;
+      top: 16px;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .nav-shell {
+      width: min(100% - 32px, var(--container));
+      margin: 0 auto;
+      border-radius: 999px;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(3, 7, 18, 0.72);
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 18px 60px rgba(0,0,0,0.35);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: conic-gradient(from 180deg, var(--purple), var(--blue), var(--pink), var(--purple));
+      box-shadow: 0 0 25px rgba(168, 85, 247, 0.55);
+      font-size: 0.9rem;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: #dbeafe;
+      font-size: 0.92rem;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 999px;
+      transition: 0.25s ease;
+    }
+
+    .nav-link:hover {
+      background: rgba(255,255,255,0.1);
+      color: white;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 85vh;
+      display: grid;
+      place-items: center;
+      padding: 140px 0 60px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.06em;
+      margin-bottom: 24px;
+      font-weight: 900;
+    }
+
+    .hero p {
+      color: var(--soft);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      line-height: 1.8;
+      max-width: 750px;
+      margin: 0 auto 38px;
+    }
+
+    /* Tombol WhatsApp Mengglowing */
+    .btn-primary {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 56px;
+      padding: 0 32px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #7c3aed, #2563eb, #06b6d4);
+      box-shadow: 0 18px 46px rgba(37,99,235,0.35);
+      color: white;
+      font-weight: 900;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 22px 50px rgba(37,99,235,0.5);
+    }
+
+    /* Grid Layanan Jasa */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .service-card {
+      position: relative;
+      border-radius: var(--radius);
+      padding: 32px;
+      min-height: 250px;
+      transition: 0.32s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(255,255,255,0.28);
+    }
+
+    .service-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 14px;
+      letter-spacing: -0.04em;
+    }
+
+    .service-card p {
+      color: var(--soft);
+      line-height: 1.75;
+      font-size: 0.98rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      text-align: center;
+      letter-spacing: -0.05em;
+      margin-bottom: 10px;
+    }
+
+    .footer {
+      padding: 40px 0;
+      color: var(--soft);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    /* Responsif untuk HP */
+/* =========================================
+       1. GRID PORTOFOLIO 
+       ========================================= */
+    .portfolio-grid {
+      display: grid;
+      /* Membatasi maksimal lebar kartu di 450px agar proporsional */
+      grid-template-columns: repeat(auto-fit, minmax(300px, 450px)); 
+      justify-content: center; /* Kunci agar 2 kartu posisinya pas di tengah */
+      gap: 32px;
+      margin-top: 20px;
+    }
+
+/* Mengatur ulang padding agar gambar bisa menyentuh tepi kartu */
+    .portfolio-card {
+      border-radius: var(--radius);
+      padding: 0; /* Padding dihapus dari sini */
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Gaya khusus untuk gambar portofolio */
+    .portfolio-image {
+      width: 100%;
+      height: 200px; /* Tinggi gambar diseragamkan */
+      object-fit: cover; /* Memastikan gambar tidak gepeng */
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Memindahkan padding ke pembungkus teks */
+    .card-content {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: rgba(168, 85, 247, 0.4);
+      box-shadow: 0 20px 40px rgba(168, 85, 247, 0.15);
+    }
+
+    .portfolio-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .portfolio-card p {
+      color: var(--soft);
+      line-height: 1.6;
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+
+    .badge-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .badge {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--cyan);
+      padding: 6px 12px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    /* =========================================
+       2. GAYA TOMBOL HAMBURGER (Sembunyi di PC)
+       ========================================= */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 5px;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background-color: var(--text);
+      border-radius: 2px;
+      transition: 0.3s ease-in-out;
+    }
+
+    /* =========================================
+       3. UPDATE RESPONSIF UNTUK LAYAR HP
+       ========================================= */
+    @media (max-width: 850px) {
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 110%;
+        right: 16px;
+        background: rgba(3, 7, 18, 0.95);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 20px;
+        flex-direction: column;
+        min-width: 200px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-15px);
+        transition: all 0.3s ease;
+      }
+
+      .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      
+      .nav-link {
+        display: block;
+        text-align: center;
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER NAVBAR -->
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a href="#home" class="brand">
+        <span class="brand-mark">AK</span>
+        <span>AK Tech Web Dev</span>
+      </a>
+      <button class="hamburger" id="hamburger-btn" aria-label="Buka Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+<ul class="nav-links" id="nav-menu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#layanan" class="nav-link">Layanan</a></li>
+        <li><a href="#portofolio" class="nav-link">Portofolio</a></li> </ul>      
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <h1>
+          Jasa Pembuatan Website<br>
+          <span class="gradient-text">Solutif &amp; Profesional</span>
+        </h1>
+        <p>
+          Bantu bisnis dan personal branding Anda go-digital dengan website berkelas dunia yang cepat, responsif, tepercaya, dan memiliki standar visual modern.
+        </p>
+        <!-- Masukkan nomor WhatsApp-mu di wa.me/628xxx -->
+        <a href="https://wa.me/6281931195823?text=Halo%20Ahmad,%20saya%20tertarik%20bikin%20website" class="btn-primary" target="_blank">
+          Konsultasi Gratis Sekarang <span>&#x2197;</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="section" id="layanan">
+      <div class="container">
+        <h2 class="section-title">Layanan Yang Saya Sediakan</h2>
+        <p style="text-align: center; color: var(--muted); margin-bottom: 20px;">Solusi digital tepat guna untuk berbagai kebutuhan proyek Anda.</p>
+        
+        <div class="service-grid">
+          <div class="service-card glass">
+            <h3>Website Portofolio</h3>
+            <p>Cocok untuk mahasiswa, fotografer, arsitek, atau freelancer yang ingin memamerkan hasil karyanya dengan tampilan premium dan interaktif.</p>
+          </div>
+          <div class="service-card glass">
+            <h3>Landing Page Produk</h3>
+            <p>Halaman promosi satu halaman yang dioptimalkan khusus untuk meningkatkan konversi penjualan produk, bisnis, ataupun event Anda.</p>
+          </div>
+          <div class="service-card glass">
+            <h3>Website Toko Online</h3>
+            <p>Website e-commerce lengkap dengan integrasi katalog produk sistematis demi mempermudah pelanggan berbelanja langsung secara online.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========================================== -->
+    <!-- UNIFIED PORTFOLIO SECTION (ETALASE KARYA)  -->
+    <!-- ========================================== -->
+    <section class="section" id="portfolio">
+      <div class="container">
+        <h2 class="section-title">Etalase Karya <span class="gradient-text">&amp; Proyek IT</span></h2>
+        <p style="text-align: center; color: var(--muted); margin-bottom: 40px;">
+          Bukti nyata dari dedikasi dan keahlian teknis di bidang Rekayasa Perangkat Lunak dan Kecerdasan Buatan.
+        </p>
+        
+        <div class="service-grid">
+          
+          <!-- KARTU PROYEK 1: KRUPUK INDRAMAYU -->
+          <div class="service-card glass" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <!-- Wadah Gambar Krupuk Indramayu -->
+              <div style="width: 100%; height: 180px; overflow: hidden; border-radius: 18px; margin-bottom: 18px; border: 1px solid rgba(255,255,255,0.1);">
+                <!-- Silakan ganti nama file gambar di bawah ini sesuai file yang kamu miliki -->
+                <img src="images/Kerupuk-Ikan&Terasi-Imy.jpg" alt="Krupuk Indramayu" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              
+              <div style="font-size: 0.8rem; color: var(--cyan); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Landing Page Kelompok / Klien</div>
+              <h3>Krupuk &amp; Trasi Indramayu</h3>
+              <p style="margin-top: 10px; font-size: 0.93rem; color: var(--soft);">
+                Sebuah landing page modern, responsif, dan interaktif yang dirancang khusus untuk meningkatkan konversi penjualan produk UMKM khas pesisir pantai.
+              </p>
+              <div style="margin-top: 15px; display: flex; gap: 6px; flex-wrap: wrap;">
+                <span style="background: rgba(34,211,238,0.15); color: var(--cyan); padding: 4px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 700;">Front-End</span>
+                <span style="background: rgba(255,255,255,0.1); color: white; padding: 4px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 700;">UI/UX</span>
+              </div>
+            </div>
+            <div style="margin-top: 24px;">
+              <a href="https://s.id/KrupukIkanTerasiImy" target="_blank" class="nav-link" style="background: rgba(255,255,255,0.08); display: block; text-align: center; border-radius: 14px; padding: 12px; font-weight: 600;">Lihat Live Demo ↗</a>
+            </div>
+          </div>
+
+          <!-- KARTU PROYEK 2: DETEKSI ANOMALI OTDR -->
+          <div class="service-card glass" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <!-- Wadah Gambar Sinyal OTDR -->
+              <div style="width: 100%; height: 180px; overflow: hidden; border-radius: 18px; margin-bottom: 18px; border: 1px solid rgba(255,255,255,0.1);">
+                <!-- Catatan: sesuaikan nama file jika ada typo double dot (..) pada nama aslinya -->
+                <img src="images/ml-otdr..webp" alt="Arsitektur Machine Learning" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+
+              <div style="font-size: 0.8rem; color: var(--purple); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Arsitektur Machine Learning</div>
+              <h3>Deteksi Anomali Sinyal OTDR</h3>
+              <p style="margin-top: 10px; font-size: 0.93rem; color: var(--soft);">
+                Membangun model Machine Learning menggunakan arsitektur Autoencoder berbasis Gated Recurrent Unit (GRU) untuk memonitor infrastruktur jaringan fiber optik.
+              </p>
+              <div style="margin-top: 15px; display: flex; gap: 6px; flex-wrap: wrap;">
+                <span style="background: rgba(168,85,247,0.15); color: var(--purple); padding: 4px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 700;">Machine Learning</span>
+                <span style="background: rgba(255,255,255,0.1); color: white; padding: 4px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 700;">Python</span>
+              </div>
+            </div>
+            <div style="margin-top: 24px;">
+              <a href="#" class="nav-link" style="background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.4); display: block; text-align: center; border-radius: 14px; padding: 12px; font-weight: 600; cursor: not-allowed;">Private Repository 🔒</a>
+            </div>
+          </div>
+
+          <!-- KARTU PROYEK 3: KRIPIK DEWA -->
+          <div class="service-card glass" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <!-- Wadah Gambar Kripik Dewa -->
+              <div style="width: 100%; height: 180px; overflow: hidden; border-radius: 18px; margin-bottom: 18px; border: 1px solid rgba(255,255,255,0.1);">
+                <img src="images/web-kripik-dewa.webp" alt="Landing Page UMKM" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+
+              <div style="font-size: 0.8rem; color: var(--pink); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Landing Page E-Commerce</div>
+              <h3>Web Kripik Dewa</h3>
+              <p style="margin-top: 10px; font-size: 0.93rem; color: var(--soft);">
+                Merancang dan mengembangkan antarmuka website responsif untuk produk camilan lokal, mengintegrasikan alur pemesanan dinamis via WhatsApp.
+              </p>
+              <div style="margin-top: 15px; display: flex; gap: 6px; flex-wrap: wrap;">
+                <span style="background: rgba(236,72,153,0.15); color: var(--pink); padding: 4px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 700;">E-Commerce</span>
+                <span style="background: rgba(255,255,255,0.1); color: white; padding: 4px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 700;">HTML/CSS</span>
+              </div>
+            </div>
+            <div style="margin-top: 24px;">
+              <a href="https://kripik-dewa.netlify.app/" class="nav-link" style="background: rgba(255,255,255,0.08); display: block; text-align: center; border-radius: 14px; padding: 12px; font-weight: 600;">Lihat Live Demo ↗</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2026 Ahmad Khapidin. All Rights Reserved.</p>
+  </footer>
+
+<script>
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const navMenu = document.getElementById('nav-menu');
+
+    // Memunculkan/menyembunyikan menu saat hamburger diklik
+    hamburgerBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Otomatis menutup menu saat salah satu tautan (Home/Layanan) diklik
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
